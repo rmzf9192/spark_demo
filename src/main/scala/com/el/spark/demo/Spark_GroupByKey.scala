@@ -22,6 +22,7 @@ object Spark_GroupByKey {
     val group: RDD[(String, Iterable[Int])] = listRdd.groupByKey()
     group.collect().foreach(println)
 
+    //reduceByKey 算子
     val reduceByKeyRdd:Array[(String,Int)] = listRdd.reduceByKey(_ + _).collect()
 
     reduceByKeyRdd.foreach(println)
